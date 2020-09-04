@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+<% if (generos == "vacio"){ %>   
+        <h1>No existe tal genero</h1> 
+<% } else { %> 
+<h1><a href="/bandas">Home</a></h1>
+<div class="container">
+    <h1><%= generos[0].genero %> </h1>
+    <% for (let i = 0; i < generos.length; i++) { %>
+        <div class="bandas">
+            <h1><a href="../id/<%= generos[i].id %>"><%= generos[i].nombre %></a></h1>
+            <img src="<%= generos[i].cover %>" alt="">
+        </div>
+      <% } %>
+      <% } %>
+</div>
+</body>
+<%- include("./partials/footer") %> 
+</html>

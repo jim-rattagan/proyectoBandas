@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Listado de bandas</h1>
+   <div class="container">
+       <% for (let i = 0; i < listaBandas.length; i++) { %>
+        <div class="bandas">
+            <h1><a href="../bandas/id/<%= listaBandas[i].id %>"><%= listaBandas[i].nombre %> </a></h1>
+            <img src="<%= listaBandas[i].cover %>" alt="">
+            <h2>Genero: <a href="../bandas/genero/<%= listaBandas[i].genero %> "><%= listaBandas[i].genero %></a></h2>
+        </div>
+      <% } %>
+   </div>
+</body>
+<%- include("./partials/footer") %> 
+</html>
+

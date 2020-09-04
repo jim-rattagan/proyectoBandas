@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+<% if (detalles == "vacio"){ %>   
+    <h1>No existe tal banda</h1> 
+<% } else { %> 
+<h1><a href="/bandas">Home</a></h1>
+<div class="container">
+ <h1> <%= detalles[0].nombre %> </h1>
+ <img src="<%= detalles[0].cover %> " alt="">
+ <h2>Canciones</h2>
+ <ul>
+     <li><%= detalles[0].topCanciones[0] %> </li>
+     <li><%= detalles[0].topCanciones[1] %> </li>
+     <li><%= detalles[0].topCanciones[2] %> </li>
+</ul>
+<h2>Genero</h2>
+<a href="../genero/<%= detalles[0].genero %> "><%= detalles[0].genero %> </a>
+<h2>Video</h2>
+<iframe src="<%= detalles[0].video %> " frameborder="0"></iframe>
+</div>
+<% } %>
+</body>
+<%- include("./partials/footer") %> 
+</html>
